@@ -1,0 +1,339 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #E0E0E0;
+}
+
+.sidebar {
+  width: 15%;
+  background: #F5F5F5;
+  color: #FFF;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  overflow-y: auto;
+  transition: 0.6s ease;
+  transition-property: left;
+  box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  height: 100px;
+  width: 175px;
+  margin-left: 5%;
+  
+}
+
+.menu {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.menu .item {
+  position: relative;
+  cursor: pointer;
+  
+}
+
+.menu .item .active {
+  background: #FFB600;
+  color: #FFF;
+}
+
+.menu .item a:hover:not(.active) {
+  background: #FEE715;
+  color: #101820;
+  
+}
+
+.menu .item a {
+  color: #555555;
+  font-size: 15px;
+  text-decoration: none;
+  display: block;
+  padding: 5px 25px;
+  line-height: 60px;
+}
+
+.item i {
+  margin-right: 15px;
+}
+
+header {
+  width: 85%;
+  margin-left: 15%;
+  display: flex;
+  background: #E0E0E0;
+  padding: 15px 20px;
+}
+
+
+
+
+.notification {
+  font-size: 25px;
+  margin: 5px 50px 0px auto;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s ease;
+
+}
+
+.notification:hover {
+  color: #FFD700;
+}
+
+.profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease, border 0.3s ease;
+  margin-right: 25px;
+}
+
+.profile-img:hover {
+  border: 2px solid #FFD700;
+  transform: scale(1.1);
+}
+
+
+.profile-details {
+    display: none;
+    position: absolute;
+    top: 110%; 
+    left: -275px; 
+    background-color: #f0f0f0;
+    padding: 15px;
+    width: 350px; 
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.profile-info {
+  display: flex; 
+  align-items: flex-start;  
+  flex-wrap: wrap; 
+}
+
+.profile-sub-img {
+  width: 75px; 
+  height: 75px; 
+  border-radius: 50%; 
+  object-fit: cover; 
+  margin-right: 15px; 
+}
+
+.profile-text {
+  display: flex;
+  flex-direction: column; 
+}
+
+.profile-text p {
+  margin: 2px 0; 
+  font-size: 15px;
+}
+
+.profile-text p:first-child {
+  font-weight: bold; 
+}
+
+.profile-actions {
+  margin-top: 15px; 
+  flex-basis: 100%; 
+  display: flex;
+  flex-direction: column; 
+  gap: 10px; 
+}
+
+.profile-actions button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profile-actions button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.profile-actions button:hover {
+  background-color: #FFD700;
+  color: #FFF;
+}
+
+/* Style untuk bagian utama halaman */
+main {
+  margin-left: 16%;
+  margin-top: 2%;
+  padding: 20px;
+}
+
+main h2 {
+  margin-left: 35%;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+/* Style untuk tabel */
+table {
+  margin-top: 2%;
+  width: 100%;
+  border-spacing: 0;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  background: #FFF;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan agar tabel terlihat lebih modern */
+}
+
+/* Style untuk header tabel */
+th, td {
+  padding: 15px;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  border-bottom: 2px solid #ccc;
+}
+
+th {
+  font-weight: bold;
+  background: #50586C;
+  color: #DCE2F0;
+}
+
+th:nth-child(1), td:nth-child(1) { width: 5%; text-align: center; }
+th:nth-child(2), td:nth-child(2) { width: 8%; text-align: center;}
+th:nth-child(3), td:nth-child(3) { width: 15%; text-align: center;}
+th:nth-child(4), td:nth-child(4) { width: 15%; text-align: center;}
+th:nth-child(5), td:nth-child(5) { width: 15%; text-align: center;}
+th:nth-child(6), td:nth-child(6) { width: 12%; text-align: center;}
+th:nth-child(7), td:nth-child(7) { width: 12%; text-align: center;}
+
+tr:hover {
+  background: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Style untuk kolom foto profil */
+.profile-photo {
+  text-align: center; /* Menyusun foto di tengah */
+}
+
+.profile-photo img {
+  width: 40px; /* Ukuran lebar foto */
+  height: 40px; /* Ukuran tinggi foto */
+  object-fit: cover; /* Agar gambar tetap sesuai ukuran */
+  border-radius: 50%; /* Membuat gambar berbentuk bulat */
+  border: 2px solid #ccc; /* Border di sekitar foto */
+  transition: all 0.3s ease; /* Transisi smooth saat hover */
+}
+
+.profile-photo img:hover {
+  transform: scale(1.1); /* Zoom-in foto sedikit saat hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Tambahkan shadow halus */
+  cursor: pointer; /* Mengubah cursor menjadi pointer */
+}
+
+/* Style untuk tombol */
+.delete {
+  background: #dc3545;
+  color: #FFF;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete:hover {
+  background: #c82333;
+}
+
+.btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn.edit {
+  background-color: #FFA500;
+  color: white;
+}
+
+.btn.edit:hover {
+  background-color: #e59400;
+}
+
+
+
+#confirmModal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.contentModal {
+  position: absolute; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  background: #fff;
+
+  border-radius: 5px; 
+  width: 375px; 
+  text-align: center;
+  
+
+}
+
+.contentModal h3 {
+  color: 000;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.contentModal p {
+  color: #F00;
+  padding: 15px;
+ 
+}
+
+.contentModal button {
+  margin-bottom: 10px;
+}
+
+
+.btn-danger {
+  background-color: red;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: gray;
+  color: white;
+}
